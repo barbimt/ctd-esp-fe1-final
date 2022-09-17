@@ -1,11 +1,12 @@
 import "./grilla-personajes.css";
 import React, { FC, useEffect } from "react";
 import TarjetaPersonaje from "./tarjeta-personaje.componente";
-import {
+import { useDispatch,
   TypedUseSelectorHook,
   useSelector as useReduxSelector,
 } from "react-redux";
 import { IRootState } from "../../store/store";
+import { buscarPersonajesThunk } from "../../actions/personajesActions";
 
 export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 
@@ -20,6 +21,10 @@ export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 const GrillaPersonajes: FC = () => {
 
   const { personajes, status } = useSelector((state) => state.personajes);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(buscarPersonajesThunk(""));
+  }, [dispatch]);
 
 
   if (!personajes || personajes.length === 0) return <></>;

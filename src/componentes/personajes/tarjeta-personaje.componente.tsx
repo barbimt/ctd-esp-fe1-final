@@ -2,6 +2,8 @@ import BotonFavorito from '../botones/boton-favorito.componente';
 import './tarjeta-personaje.css';
 import Personaje from '../../types/personaje.types';
 import React, { FC } from "react";
+
+
 /**
  * Tarjeta para cada personaje dentro de la grilla de personajes. 
  * 

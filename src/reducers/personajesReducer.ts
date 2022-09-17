@@ -43,6 +43,11 @@ const personajesReducer: Reducer<PersonajesState, PersonajesAction> =
                     personajes: [], //opcional
                     error: action.payload.error
                 }
+            case "LIMPIAR_FILTRO":
+                    return {
+                        ...state,
+                       busqueda: "",                  
+                    }
             default:
                 return state;
         }

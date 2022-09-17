@@ -28,7 +28,14 @@ export interface BuscarPersonajesErrorAction extends Action {
     }
 }
 
-export type PersonajesAction = BuscarPersonajesAction | BuscarPersonajesExitoAction | BuscarPersonajesErrorAction
+export interface LimpiarFiltroAction extends Action {
+    type: "LIMPIAR_FILTRO",
+    payload: {
+        busqueda: string
+    }
+}
+
+export type PersonajesAction = BuscarPersonajesAction | BuscarPersonajesExitoAction | BuscarPersonajesErrorAction | LimpiarFiltroAction
 
 
 interface BuscarPersonajesThunkAction extends ThunkAction<void, IRootState, unknown, PersonajesAction> { }
@@ -61,6 +68,14 @@ const buscarPersonajesError: ActionCreator<BuscarPersonajesErrorAction> = (error
     }
 }
 
+export const limpiarFiltroPersonaje: ActionCreator<LimpiarFiltroAction> = (busqueda: string) => {
+    return {
+        type: "LIMPIAR_FILTRO",
+        payload: {
+            busqueda: busqueda
+        }
+    }
+}
 
 
 export const buscarPersonajesThunk = (name: string): BuscarPersonajesThunkAction => {
