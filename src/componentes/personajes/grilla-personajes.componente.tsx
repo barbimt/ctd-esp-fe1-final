@@ -2,9 +2,6 @@ import "./grilla-personajes.css";
 import { FC } from "react";
 import TarjetaPersonaje from "./tarjeta-personaje.componente";
 import Personaje from "../../types/personaje.types";
-
-
-
 /**
  * Grilla de personajes para la pagina de inicio
  *

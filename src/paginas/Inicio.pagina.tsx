@@ -31,18 +31,19 @@ const PaginaInicio: FC = () => {
     dispatch(buscarPersonajesThunk(""));
   }, [dispatch]);
 
+  const limpiarFiltroOnClick = () => {
+    dispatch(limpiarFiltroPersonaje(""));
+    dispatch(buscarPersonajesThunk(""));
+  }
   return (
     <div className="container">
       <div className="actions">
         <h3>Catálogo de Personajes</h3>
         <button
           className="danger"
-          onClick={() => {
-            dispatch(limpiarFiltroPersonaje(""));
-            dispatch(buscarPersonajesThunk(""));
-          }}
+          onClick={limpiarFiltroOnClick}
         >
-          Test Button
+          Limpiar filtros
         </button>
       </div>
       <Filtros />

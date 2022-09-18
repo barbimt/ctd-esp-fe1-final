@@ -32,6 +32,11 @@ const favoriteReducer = (state: FavoriteState = estadoInicial, action: Favorites
                 ...state,
                 historial: mapDelete
             }
+        case "DELETE_ALL_FAVORITE_ACTION":
+            return {
+                ...estadoInicial
+            }
+
         default:
             return {...state}
     }

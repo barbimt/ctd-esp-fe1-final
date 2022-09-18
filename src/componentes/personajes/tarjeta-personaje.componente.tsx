@@ -9,6 +9,7 @@ import {
 } from "react-redux";
 import { IRootState } from "../../store/store";
 import { addFavorito, deleteFavorito } from "../../actions/favoriteActions";
+import { useNavigate } from "react-router-dom";
 
 export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 /**
@@ -20,13 +21,12 @@ export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
  * @returns un JSX element
  */
 const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
+  let navigate = useNavigate();
   const historial = useSelector((state) => state.favoritos.historial);
 
   const dispatch = useDispatch();
 
-  const seleccionarPersonaje = (personaje: Personaje) => {
-    console.log("seleccionar personaje", personaje.id);
-    console.log(historial.has(personaje.id), "historial", personaje.id);
+   const seleccionarPersonaje = (personaje: Personaje) => {
     if (historial.has(personaje.id)) {
       dispatch(deleteFavorito(personaje));
     } else {
@@ -34,9 +34,13 @@ const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
     }
   };
 
+  const redirectToDetailPage = () => {
+    navigate(`/detalle/${personaje.id}`, { state: { personaje: personaje } });
+  };
+
   return (
     <div className="tarjeta-personaje">
-      <img src={personaje.image} alt={personaje.name} />
+      <img src={personaje.image} alt={personaje.name}  onClick={redirectToDetailPage} />
       <div className="tarjeta-personaje-body">
         <span>{personaje.name}</span>
         <BotonFavorito

@@ -4,14 +4,14 @@ import { IRootState } from "../store/store";
 import Personaje from "../types/personaje.types";
 import PaginaInfo from "../types/paginaInfo.types";
 
-export interface BuscarPersonajesAction extends Action {
+ interface BuscarPersonajesAction extends Action {
     type: "BUSCAR_PERSONAJES",
     payload: {
         name: string
     }
 }
 
-export interface BuscarPersonajesExitoAction extends Action {
+ interface BuscarPersonajesExitoAction extends Action {
     type: "BUSCAR_PERSONAJES_EXITO",
     payload: {
         personajes: Personaje[],
@@ -21,14 +21,14 @@ export interface BuscarPersonajesExitoAction extends Action {
 
 }
 
-export interface BuscarPersonajesErrorAction extends Action {
+ interface BuscarPersonajesErrorAction extends Action {
     type: "BUSCAR_PERSONAJES_ERROR",
     payload: {
         error: string
     }
 }
 
-export interface LimpiarFiltroAction extends Action {
+ interface LimpiarFiltroAction extends Action {
     type: "LIMPIAR_FILTRO",
     payload: {
         busqueda: string
