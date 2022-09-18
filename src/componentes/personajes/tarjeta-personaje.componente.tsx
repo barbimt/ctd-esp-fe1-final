@@ -25,7 +25,7 @@ const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
   const dispatch = useDispatch();
 
   const seleccionarPersonaje = (personaje: Personaje) => {
-    console.log("seleccionar personaje", personaje.id)
+    console.log("seleccionar personaje", personaje.id);
     console.log(historial.has(personaje.id), "historial", personaje.id);
     if (historial.has(personaje.id)) {
       dispatch(deleteFavorito(personaje));
