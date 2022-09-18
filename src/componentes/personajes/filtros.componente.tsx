@@ -8,10 +8,6 @@ import {
   } from "react-redux";
   import { IRootState } from "../../store/store";
 
-
-
-
-
 const Filtros:FC = () => {
 const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
     const dispatch = useDispatch();
