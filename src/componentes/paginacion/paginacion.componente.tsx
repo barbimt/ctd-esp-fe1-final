@@ -21,11 +21,11 @@ const Paginacion: FC = () => {
   const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
   const { count, pages, next, prev } = useSelector((state) => state.personajes.page);
 
-  const paginaAnterior = () => {
+  const paginaAnterior = ():void => {
     dispatch(cambiarPaginaThunk(prev));
   };
 
-  const paginaSiguiente = () => {
+  const paginaSiguiente = ():void  => {
     dispatch(cambiarPaginaThunk(next));
   };
 

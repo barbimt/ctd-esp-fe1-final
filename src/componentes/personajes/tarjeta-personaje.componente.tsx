@@ -26,7 +26,7 @@ const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
 
   const dispatch = useDispatch();
 
-   const seleccionarPersonaje = (personaje: Personaje) => {
+   const seleccionarPersonaje = (personaje: Personaje): void => {
     if (historial.has(personaje.id)) {
       dispatch(deleteFavorito(personaje));
     } else {
@@ -34,13 +34,13 @@ const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
     }
   };
 
-  const redirectToDetailPage = () => {
+  const redirectToPaginaDetalle = () => {
     navigate(`/detalle/${personaje.id}`, { state: { personaje: personaje } });
   };
 
   return (
     <div className="tarjeta-personaje">
-      <img src={personaje.image} alt={personaje.name}  onClick={redirectToDetailPage} />
+      <img src={personaje.image} alt={personaje.name}  onClick={redirectToPaginaDetalle} className="img-pointer"/>
       <div className="tarjeta-personaje-body">
         <span>{personaje.name}</span>
         <BotonFavorito
