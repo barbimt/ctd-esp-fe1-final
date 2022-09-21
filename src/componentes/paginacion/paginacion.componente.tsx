@@ -19,7 +19,7 @@ import { cambiarPaginaThunk } from "../../actions/personajesActions";
 const Paginacion: FC = () => {
   const dispatch = useDispatch();
   const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
-  const { count, pages, next, prev } = useSelector((state) => state.personajes.page);
+  const { next, prev } = useSelector((state) => state.personajes.page);
 
   const paginaAnterior = ():void => {
     dispatch(cambiarPaginaThunk(prev));

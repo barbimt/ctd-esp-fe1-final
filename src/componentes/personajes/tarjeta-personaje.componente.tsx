@@ -17,8 +17,8 @@ export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
  *
  * Deberás agregar las propiedades necesarias para mostrar los datos de los personajes
  *
- *
- * @returns un JSX element
+ * @param {Personaje} personaje
+ * @returns {React.ReactElement}  JSX element
  */
 const TarjetaPersonaje: FC<{ personaje: Personaje }> = ({ personaje }) => {
   let navigate = useNavigate();

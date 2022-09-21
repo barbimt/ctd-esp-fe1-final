@@ -9,6 +9,16 @@ const estadoInicial: FavoriteState = {
     historial: new Map(),
 }
 
+
+
+/**
+ * Favorito reducer
+ *
+ * @param {State} estadoInicial
+ * @param {DataStore.Reducer<FavoriteState, FavoritesAction>} action
+ *
+ * @returns {State}
+ */
 const favoriteReducer = (state: FavoriteState = estadoInicial, action: FavoritesAction) => {
     switch (action.type) {
 

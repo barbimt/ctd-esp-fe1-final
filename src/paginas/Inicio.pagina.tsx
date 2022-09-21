@@ -13,23 +13,25 @@ import {
   limpiarFiltroPersonaje,
 } from "../actions/personajesActions";
 
-export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
 /**
  * Esta es la pagina principal. Aquí se debera ver el panel de filtros junto con la grilla de personajes.
  *
  * Uso:
  * ``` <PaginaInicio /> ```
  *
- * @returns la pagina de inicio
+ * @returns {React.ReactElement} JSX element
  */
 
 const PaginaInicio: FC = () => {
+  const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
   const { personajes, status } = useSelector((state) => state.personajes);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(buscarPersonajesThunk(""));
   }, [dispatch]);
+
+
 
   const limpiarFiltroOnClick = () => {
     dispatch(limpiarFiltroPersonaje(""));

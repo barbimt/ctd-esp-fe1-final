@@ -13,7 +13,14 @@ const initialState: EpisodiosState = {
     episodios: [],
     error: null,
 };
-
+/**
+ * Personaje reducer
+ *
+ * @param {State} initialState
+ * @param {DataStore.Reducer<EpisodiosState, EpisodiosAction>} action
+ *
+ * @returns {State}
+ */
 const episodiosReducer: Reducer<EpisodiosState, EpisodiosAction> = (state = initialState, action): EpisodiosState => {
     switch (action.type) {
         case "TRAER_EPISODIOS":

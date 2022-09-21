@@ -1,13 +1,12 @@
 import './boton-favorito.css';
 import { FC, MouseEventHandler } from "react";
-import Personaje from '../../types/personaje.types';
 
 /**
  * Boton que indica si un elemento es favorito o no, y da la posibilidad de marcarlo/desmarcarlo
  * 
  * Deberás tipar las propiedades si usas este componente
- * 
- * @param {boolean} esFavorito
+ * @param {onClick: event} props
+ * @param {esFavorito: boolean} props  esFavorito -> recibe si el elemento es favorito ono
  * @returns {React.ReactElement} JSX element
  */
 const BotonFavorito : FC<{esFavorito: Boolean, onClick: MouseEventHandler<HTMLImageElement> }> = ({esFavorito,  onClick}) => {

@@ -14,7 +14,7 @@ import Personaje from "../types/personaje.types";
 import { traerEpisodiosThunk } from "../actions/episodiosAction";
 import { addFavorito, deleteFavorito } from "../actions/favoriteActions";
 
-export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
+
 
 /**
  * Esta es la pagina de detalle. Aqui se puede mostrar la vista sobre el personaje seleccionado junto con la lista de episodios en los que aparece
@@ -25,10 +25,11 @@ export const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
  *
  * Uso:
  * ``` <PaginaDetalle /> ```
- *
- * @returns la pagina de detalle
+ * 
+ * @returns {React.ReactElement} la pagina de detalle
  */
 const PaginaDetalle: FC = () => {
+   const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
   const { episodios, status } = useSelector((state) => state.episodios);
   const historial = useSelector((state) => state.favoritos.historial);
 

@@ -7,8 +7,8 @@ import Episodio from '../../types/episodio.types';
  * 
  * Deberás agregar las propiedades necesarias para mostrar los datos de los episodios
  * 
- * 
- * @returns un JSX element 
+ *  @param {Episodio} episodio
+ * @returns {React.ReactElement} JSX element
  */
 const TarjetaEpisodio: FC<{episodio: Episodio}> = ({episodio}) => {
 

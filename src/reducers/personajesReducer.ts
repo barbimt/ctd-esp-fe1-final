@@ -3,6 +3,7 @@ import { PersonajesAction } from "../actions/personajesActions";
 import PaginaInfo from "../types/paginaInfo.types";
 import Personaje from "../types/personaje.types";
 
+
 export interface PersonajesState {
     page: PaginaInfo;
     busqueda: string;
@@ -19,6 +20,14 @@ const initialState: PersonajesState = {
     error: null
 };
 
+/**
+ * Personaje reducer
+ *
+ * @param {State} initialState
+ * @param {DataStore.Reducer<PersonajesState, PersonajesAction>} action
+ *
+ * @returns {State}
+ */
 const personajesReducer: Reducer<PersonajesState, PersonajesAction> =
     (state = initialState, action): PersonajesState => {
         switch (action.type) {
@@ -40,7 +49,7 @@ const personajesReducer: Reducer<PersonajesState, PersonajesAction> =
                 return {
                     ...state,
                     status: "COMPLETADO_CON_ERROR",
-                    personajes: [], //opcional
+                    personajes: [], 
                     error: action.payload.error
                 }
             case "LIMPIAR_FILTRO":

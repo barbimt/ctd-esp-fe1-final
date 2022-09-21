@@ -6,9 +6,11 @@ import Personaje from "../../types/personaje.types";
  * Grilla de personajes para la pagina de inicio
  *
  * Deberás agregar las funciones necesarias para mostrar y paginar los personajes
+ * @param {Object[]} listaPersonajes props
+ * @param {string} status prop
+ * 
  *
- *
- * @returns un JSX element
+ * @returns {React.ReactElement} JSX element
  */
 const GrillaPersonajes: FC<{ listaPersonajes: Personaje[], status?: String }> = ({ listaPersonajes, status } ) => {
 

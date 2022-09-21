@@ -8,8 +8,14 @@ import {
   } from "react-redux";
   import { IRootState } from "../../store/store";
 
+  
+/**
+ * Componente que contiene el input para filtrar los personajes
+ *
+ * @returns {React.ReactElement} JSX element
+ */
 const Filtros:FC = () => {
-const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
+    const useSelector: TypedUseSelectorHook<IRootState> = useReduxSelector;
     const dispatch = useDispatch();
     const busqueda = useSelector((state) => state.personajes.busqueda);
 
