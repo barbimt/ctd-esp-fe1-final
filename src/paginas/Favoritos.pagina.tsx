@@ -29,7 +29,10 @@ const PaginaFavoritos: FC = () => {
         <h3>Personajes Favoritos</h3>
         <button className="danger" onClick={()=> dispatch(deleteAllFavorite())}> Eliminar todos</button>
       </div>
-      <GrillaPersonajes listaPersonajes={favoritesArray}/>
+      {
+        !favoritesArray.length ?  <p>No seleccionaste ningun personaje como favorito</p>  :  <GrillaPersonajes listaPersonajes={favoritesArray}/>
+      }
+  
     </div>
   );
 };
